@@ -486,7 +486,7 @@ idealista_df_norm.write.mode("overwrite").parquet(os.path.join(formatted_dir, "i
 lookup_income_df.write.mode("overwrite").parquet(os.path.join(formatted_dir, "lookup_income.parquet"))
 # Save lookup idealista data
 lookup_idealista_df.write.mode("overwrite").parquet(os.path.join(formatted_dir, "lookup_idealista.parquet"))
-# Print success message
-print("Data successfully standardized and saved to the Formatted Zone!")
 
+
+print("Data successfully standardized and saved to the Formatted Zone!")
 #%%
