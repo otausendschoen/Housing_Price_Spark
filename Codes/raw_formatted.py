@@ -201,8 +201,17 @@ except Exception as e:
 # 1. LOAD INTO SPARK
 
 # Load the tables into Spark DataFrames
-# income:
-income_df = spark.read.option("header", True).option("delimiter", ",").csv(income_path)
+# we need to load income from all csv files, so 2007 to 2017
+income_dir = os.path.dirname(income_path)
+
+income_df = (
+    spark
+      .read
+      .option("header", True)
+      .option("delimiter", ",")
+      .csv(os.path.join(income_dir, "*.csv"))
+)
+
 # income lookup:
 lookup_income_df = spark.read.option("header", True).csv(lookup_income_path)
 # idealista lookup:
@@ -273,6 +282,10 @@ idealista_df_st = (
       .withColumn("latitude",   col("latitude").cast("double"))
       .withColumn("longitude",  col("longitude").cast("double"))
 )
+# also: we drop the id columns as they are only confusing because they are not the same as the lookup tables
+
+income_df_st = income_df_st.drop("district_id", "neighborhood_id")
+unemployment_df_st = unemployment_df_st.drop("district_id", "neighborhood_id")
 
 # Note, for idealista, the district column is not the district so we need to use the lookup table to get the correct district and neighborhood names
 # lookup:
@@ -490,3 +503,6 @@ lookup_idealista_df.write.mode("overwrite").parquet(os.path.join(formatted_dir, 
 
 print("Data successfully standardized and saved to the Formatted Zone!")
 #%%
+# Stop the Spark session
+spark.stop()
+print("Spark session stopped.")
