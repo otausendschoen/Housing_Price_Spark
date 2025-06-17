@@ -286,7 +286,6 @@ idealista_df_st = (
 
 income_df_st = income_df_st.drop("district_id", "neighborhood_id")
 unemployment_df_st = unemployment_df_st.drop("district_id", "neighborhood_id")
-
 # Note, for idealista, the district column is not the district so we need to use the lookup table to get the correct district and neighborhood names
 # lookup:
 # |      district|        neighborhood|district_n_reconciled|    district_n|district_id|neighborhood_n_reconciled|      neighborhood_n|neighborhood_id|
