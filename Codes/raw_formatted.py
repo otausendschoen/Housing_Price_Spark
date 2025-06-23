@@ -20,13 +20,28 @@ from pyspark.sql.types import StringType
 # EXPLORARION: CHECKING OUT ALL THE FILES TO SEE WHAT/HOW WE NEED TO STANDARDIZE:::
 
 # Paths to the data files
+'''
+income_path = "/home/oliver/Documents/Term 3/Big Data Management/Lab3/Landing_Zone/Income/2017_Distribució_territorial_renda_familiar.csv"
+lookup_income_path = "/home/oliver/Documents/Term 3/Big Data Management/Lab3/Landing_Zone/lookup_tables/income_opendatabcn_extended.csv"
+lookup_idealista_path = "/home/oliver/Documents/Term 3/Big Data Management/Lab3/Landing_Zone/lookup_tables/idealista_extended.csv"
+base_dir_idealista = "/home/oliver/Documents/Term 3/Big Data Management/Lab3/Landing_Zone/Idealista/"
+dir_unemployment = "/home/oliver/Documents/Term 3/Big Data Management/Lab3/Landing_Zone/Unemployment/2020_atur_per_sexe.json"
+'''
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+
+income_path = os.path.join(SCRIPT_DIR, "../Landing_Zone/Income/2017_Distribució_territorial_renda_familiar.csv")
+lookup_income_path = os.path.join(SCRIPT_DIR, "../Landing_Zone/lookup_tables/income_opendatabcn_extended.csv")
+lookup_idealista_path = os.path.join(SCRIPT_DIR, "../Landing_Zone/lookup_tables/idealista_extended.csv")
+base_dir_idealista = os.path.join(SCRIPT_DIR, "../Landing_Zone/Idealista/")
+dir_unemployment = os.path.join(SCRIPT_DIR, "../Landing_Zone/Unemployment/2020_atur_per_sexe.json")
+
+'''
 income_path = "../Landing_Zone/Income/2017_Distribució_territorial_renda_familiar.csv"
 lookup_income_path = "../Landing_Zone/lookup_tables/income_opendatabcn_extended.csv"
 lookup_idealista_path = "../Landing_Zone/lookup_tables/idealista_extended.csv"
 base_dir_idealista = "../Landing_Zone/Idealista/"
 dir_unemployment = "../Landing_Zone/Unemployment/2020_atur_per_sexe.json"
-
-
+'''
 # Function to quickly summarize a DataFrame
 def quick_summary(df, name="df"):
     print(f"\n SUMMARY OF {name}")

@@ -1,0 +1,14 @@
+artifact_uri: file:///home/oliver/Documents/Term%203/Big%20Data%20Management/Lab3/Codes/mlruns/214736405588986945/ab5b8526ac48448cb9e1ab37d3917e2c/artifacts
+end_time: 1750685500522
+entry_point_name: ''
+experiment_id: '214736405588986945'
+lifecycle_stage: active
+run_id: ab5b8526ac48448cb9e1ab37d3917e2c
+run_name: GBT
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750685480161
+status: 3
+tags: []
+user_id: oliver

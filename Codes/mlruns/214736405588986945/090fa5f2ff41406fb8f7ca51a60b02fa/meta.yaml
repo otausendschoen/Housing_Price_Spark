@@ -1,0 +1,14 @@
+artifact_uri: file:///home/oliver/Documents/Term%203/Big%20Data%20Management/Lab3/Codes/mlruns/214736405588986945/090fa5f2ff41406fb8f7ca51a60b02fa/artifacts
+end_time: 1750685518730
+entry_point_name: ''
+experiment_id: '214736405588986945'
+lifecycle_stage: active
+run_id: 090fa5f2ff41406fb8f7ca51a60b02fa
+run_name: RandomForest
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750685500536
+status: 3
+tags: []
+user_id: oliver

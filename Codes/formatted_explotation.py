@@ -32,14 +32,14 @@ except Exception as e:
 #%%
 
 # Let's read the parquett files:
-
-exploitation_zone_path = "../Exploitation_Zone"
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+exploitation_zone_path = os.path.join(SCRIPT_DIR, "../Exploitation_Zone")
 
 # Save the extended dataframes to the exploitation zone
 if not os.path.exists(exploitation_zone_path):
     os.makedirs(exploitation_zone_path)
 
-formatted_zone_path = "../Formatted_Zone"
+formatted_zone_path = os.path.join(SCRIPT_DIR, "../Formatted_Zone")
 
 # 1. Load parquet files using Spark
 income_df = spark.read.parquet(os.path.join(formatted_zone_path, "income.parquet"))
